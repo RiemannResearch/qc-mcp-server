@@ -18,12 +18,14 @@ from tools.mcp_server_version import register_mcp_server_version_tools
 from organization_workspace import OrganizationWorkspace
 
 transport = os.getenv('MCP_TRANSPORT', 'stdio')
+port = int(os.getenv('PORT', 8000))
 
 # Load the server instructions.
 with open('src/instructions.md', 'r', encoding='utf-8') as file:
     instructions = file.read()
+
 # Initialize the FastMCP server.
-mcp = FastMCP('quantconnect', instructions, host="0.0.0.0")
+mcp = FastMCP('quantconnect', instructions, host="0.0.0.0", port=port)
 
 # Register all the tools.
 registration_functions = [
@@ -49,5 +51,4 @@ if __name__ == "__main__":
     # Load the organization workspace.
     OrganizationWorkspace.load()
     # Run the server.
-    port = int(os.getenv('PORT', 8000))
-    mcp.run(transport=transport, port=port)
+    mcp.run(transport=transport)
