@@ -1,5 +1,4 @@
 [project]
-<<<<<<< HEAD
 name = "mcp-server"
 version = "0.1.0"
 description = "Python MCP server for local interactions with the QuantConnect API."
@@ -14,14 +13,3 @@ dependencies = [
 
 [tool.pytest.ini_options]
 pythonpath = "src tests"
-=======
-name = "qc-mcp-server"
-version = "0.1.0"
-description = "Add your description here"
-readme = "README.md"
-requires-python = ">=3.11"
-dependencies = [
-    "httpx>=0.28.1",
-    "mcp>=1.27.1",
-]
->>>>>>> d8922ee14b268ef2db72b0ae65d725d408663373
