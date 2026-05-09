@@ -49,4 +49,5 @@ if __name__ == "__main__":
     # Load the organization workspace.
     OrganizationWorkspace.load()
     # Run the server.
-    mcp.run(transport=transport)
+    port = int(os.getenv('PORT', 8000))
+    mcp.run(transport=transport, port=port)
